@@ -8,7 +8,7 @@ import slack from '../../assets/slack.svg'
 
 function Header() {
   return (
-    <section className='container max-w-full '>
+    <section className='container max-w-full'>
             <header className='max-w-7xl mx-auto px-10 py-20'>
                 <div className='grid lg:grid-cols-2'>
                     <div>

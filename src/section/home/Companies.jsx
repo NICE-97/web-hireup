@@ -2,6 +2,15 @@ import React from 'react'
 import company from '../../data/company'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 
+import { Swiper,SwiperSlide } from 'swiper/react'
+
+import 'swiper/css';
+import 'swiper/css/effect-coverflow'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
+
+import { EffectCoverflow,Pagination,Navigation } from 'swiper/modules'
+
 function Companies() {
   return (
     <section className='container max-w-full'>
@@ -17,17 +26,39 @@ function Companies() {
                                 <div className='border-solid border-2 cursor-pointer transition duration-300 ease-in-out border-slate-200 px-3 py-2 hover:bg-slate-200'>
                                     <button><FaArrowLeft /></button>
                                 </div>
-                                <div className='border-solid border-2 cursor-pointer transition duration-300 ease-in-out border-slate-200 px-3 py-2 hover:bg-slate-200'>
+                                <div className='border-solid border-2  cursor-pointer transition duration-300 ease-in-out border-slate-200 px-3 py-2 hover:bg-slate-200'>
                                     <button><FaArrowRight /></button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className='mt-10 grid md:grid-cols-3 gap-5'>
+                <Swiper
+                 effect={ 'coverflow'}
+                 grabCursor={ true }
+                 centeredSlides={ true }
+                 loop={ true }
+                 slidesPerView={'auto'}
+                 coverflowEffect={
+                    {
+                        rotate: 0,
+                        stretch: 0,
+                        depth: 0,
+                        modifier: 0,
+                    }
+                 }
+                 pagination={{el:'.swiper-pagination',clickable:true}}
+                 navigation={{
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                    clickable:true,
+                 }}
+                 modules={[EffectCoverflow,Pagination,Navigation]}
+                 className='mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 swiper_container'
+                 >
                     {company.map((items, index) => {
                         return(
-                            <div key={`${index}-${items.company}`} className='grid gap-5 border-2 border-slate-200 px-10 py-10'>
+                            <SwiperSlide key={`${index}-${items.company}`} className='grid gap-5 border-2 border-slate-200 px-10 py-10'>
                                 <div className='flex gap-5'>
                                     <div className='border-solid border-2 p-2'>
                                         <img src={items.logo} alt="ball" />
@@ -44,10 +75,11 @@ function Companies() {
                                         <button>65 Employees</button>
                                     </div>
                                 </div>
-                            </div>
+                            </SwiperSlide>
                         )
                     })}
-                </div>
+                    <div className='swiper-pagination'></div>
+                </Swiper>
             </div>
     </section>
   )

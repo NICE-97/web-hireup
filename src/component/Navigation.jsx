@@ -5,7 +5,7 @@ import { IoMdMenu } from "react-icons/io";
 function Navigation() {
   return (
     <nav className='container max-w-full border-solid border-b-2 border-slate-200'>
-          <div className='max-w-7xl mx-auto py-6 px-5'>
+          <div className='max-w-7xl mx-auto py-6 px-10'>
             <div className='flex justify-between'>
               <div className='flex'>
                 <div className='content-center text-2xl text-blue-700'>

@@ -57,7 +57,7 @@ function Testimonial() {
                                     </div>
                                     <div className='flex justify-center md:justify-end'>
                                         <div className='w-full md:w-5/6'>
-                                            <img className='w-full h-120 object-cover' src={items.image} alt="presonman" />
+                                            <img className='w-full h-96 sm:h-112 md:h-120 object-cover' src={items.image} alt="presonman" />
                                         </div>
                                     </div>
                                 </div>

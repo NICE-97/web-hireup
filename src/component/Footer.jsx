@@ -53,7 +53,7 @@ function Footer() {
                                 <div className='w-full'>
                                     <input className='border-2 focus:outline-blue-500 w-full px-5 py-3' type="text" placeholder='Email address' />
                                 </div>
-                                <div className='w-40 px-3 content-center py-2 bg-blue-700 hover:bg-blue-800 text-white font-semibold text-center'>
+                                <div className='w-40 px-3 content-center py-2 bg-blue-700 hover:bg-blue-800 text-white font-semibold text-center transition duration-300 ease-in-out'>
                                     <button>Get Started</button>
                                 </div>
                             </div>

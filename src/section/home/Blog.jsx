@@ -2,6 +2,15 @@ import React from 'react'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 import blogs from '../../data/blogs'
 
+import { Swiper,SwiperSlide } from 'swiper/react'
+
+import 'swiper/css';
+import 'swiper/css/effect-coverflow'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
+
+import { EffectCoverflow,Pagination,Navigation } from 'swiper/modules'
+
 function Blog() {
   return (
     <section className='container max-w-full'>
@@ -24,12 +33,34 @@ function Blog() {
                         </div>
                     </div>
                 </div>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10'>
+                <Swiper
+                    effect={ 'coverflow'}
+                    grabCursor={ true }
+                    centeredSlides={ true }
+                    loop={ true }
+                    slidesPerView={'auto'}
+                    coverflowEffect={
+                       {
+                           rotate: 0,
+                           stretch: 0,
+                           depth: 0,
+                           modifier: 0,
+                       }
+                    }
+                    pagination={{el:'.swiper-pagination',clickable:true}}
+                    navigation={{
+                       nextEl: '.swiper-button-next',
+                       prevEl: '.swiper-button-prev',
+                       clickable:true,
+                    }}
+                    modules={[EffectCoverflow,Pagination,Navigation]}
+                    className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 swiper_container'
+                >
                     {blogs.map((items, index) => {
                         return(
-                            <div key={`${index}-${items.title}`} className='p-4 border-2 border-slate-200'>
+                            <SwiperSlide key={`${index}-${items.title}`} className='p-4 border-2 border-slate-200'>
                                 <div>
-                                    <img src={items.image} alt={items.title} />
+                                    <img className='w-full h-60 object-cover' src={items.image} alt={items.title} />
                                 </div>
                                 <div className='p-5'>
                                     <div className='grid gap-5'>
@@ -46,10 +77,11 @@ function Blog() {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </SwiperSlide>
                         )
                     })}
-                </div>
+                    <div className='swiper-pagination'></div>
+                </Swiper>
             </div>
     </section>
   )
