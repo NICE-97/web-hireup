@@ -10,6 +10,7 @@ import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
 import { EffectCoverflow,Pagination,Navigation } from 'swiper/modules'
+import SingleBlog from '../../component/SingleBlog';
 
 function Blog() {
   return (
@@ -56,27 +57,10 @@ function Blog() {
                     modules={[EffectCoverflow,Pagination,Navigation]}
                     className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 swiper_container'
                 >
-                    {blogs.map((items, index) => {
+                    {blogs.map((item, index) => {
                         return(
-                            <SwiperSlide key={`${index}-${items.title}`} className='p-4 border-2 border-slate-200'>
-                                <div>
-                                    <img className='w-full h-60 object-cover' src={items.image} alt={items.title} />
-                                </div>
-                                <div className='p-5'>
-                                    <div className='grid gap-5'>
-                                        <div>
-                                            <h2 className='px-4 py-2 inline-block bg-blue-100 text-lg text-blue-600'>{items.title}</h2>
-                                        </div>
-                                        <p className='text-2xl font-bold'>{items.info}</p>
-                                        <p className='uppercase text-gray-500 font-medium'>{items.date}</p>
-                                        <div className='flex gap-4  justify-center py-2 bg-gray-100 font-medium'>
-                                            <button>Read More</button>
-                                            <div className='content-center'>
-                                                <FaArrowRight />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <SwiperSlide key={`${index}-${item.title}`}>
+                                <SingleBlog {...item}/>
                             </SwiperSlide>
                         )
                     })}

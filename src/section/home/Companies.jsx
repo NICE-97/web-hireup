@@ -10,6 +10,7 @@ import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
 import { EffectCoverflow,Pagination,Navigation } from 'swiper/modules'
+import SingleCompanies from '../../component/SingleCompanies';
 
 function Companies() {
   return (
@@ -56,25 +57,10 @@ function Companies() {
                  modules={[EffectCoverflow,Pagination,Navigation]}
                  className='mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 swiper_container'
                  >
-                    {company.map((items, index) => {
+                    {company.map((item, index) => {
                         return(
-                            <SwiperSlide key={`${index}-${items.company}`} className='grid gap-5 border-2 border-slate-200 px-10 py-10'>
-                                <div className='flex gap-5'>
-                                    <div className='border-solid border-2 p-2'>
-                                        <img src={items.logo} alt="ball" />
-                                    </div>
-                                    <div className='content-center'>
-                                        <h3 className='font-bold text-2xl'>Dribble</h3>
-                                    </div>
-                                </div>
-                                <div className='text-gray-500 font-semibold'>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam, sint!</p>
-                                </div>
-                                <div className='inline-block'>
-                                    <div className='px-4 py-2 bg-green-200 font-semibold text-green-600 inline-block'>
-                                        <button>65 Employees</button>
-                                    </div>
-                                </div>
+                            <SwiperSlide key={`${index}-${item.company}`}>
+                                <SingleCompanies {...item}/>
                             </SwiperSlide>
                         )
                     })}

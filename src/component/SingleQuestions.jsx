@@ -10,12 +10,12 @@ function SingleQuestions({title, description}) {
         <div className='flex justify-between'>
             <h3 className='font-semibold text-lg'>{title}</h3>
             <div className='grid'>
-                <button onClick={()=>setShowContent(!showContent)} className={`content-center transition text-lg duration-500 ${showContent ? "rotate-180" : ""}`}>
+                <button onClick={()=>setShowContent(!showContent)} className={`content-center transition text-lg duration-700 ${showContent ? "rotate-180" : ""}`}>
                     <IoIosArrowDown />
                 </button>
             </div>
         </div>
-        <div className={`grid overflow-hidden transition-all duration-500 ease-in-out text-gray-700 ${showContent ? 'grid-rows-[1fr] opacity-100 mt-5' : 'grid-rows-[0fr] opacity-0 mt-0'}`}>
+        <div className={`grid overflow-hidden transition-all duration-700 ease-in-out text-gray-700 ${showContent ? 'grid-rows-[1fr] opacity-100 mt-5' : 'grid-rows-[0fr] opacity-0 mt-0'}`}>
             <div className='overflow-hidden'>
                 {description}
             </div>
@@ -25,4 +25,3 @@ function SingleQuestions({title, description}) {
 }
 
 export default SingleQuestions
-{/* <div className={`mt-5 text-gray-700 transition duration-700 ease-in-out ${showContent ? "" : "hidden" }`}>{showContent && description}</div> */}

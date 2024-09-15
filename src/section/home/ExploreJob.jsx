@@ -1,5 +1,5 @@
 import React from 'react'
-import iconperson from '../../assets/iconperson.svg'
+import iconperson from '../../assets/image/iconperson.svg'
 import { IoMdSearch } from "react-icons/io";
 
 function ExploreJob() {

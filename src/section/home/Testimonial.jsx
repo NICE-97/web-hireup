@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import iconperson from '../../assets/iconperson.svg';
+import iconperson from '../../assets/image/iconperson.svg';
 import { FaArrowLeft } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
 import presons from '../../data/presons';

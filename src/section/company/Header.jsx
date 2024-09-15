@@ -1,4 +1,5 @@
 import React from 'react'
+
 import amazon from '../../assets/image/amazon.svg'
 import dropbox from '../../assets/image/dropbox.svg'
 import hubspot from '../../assets/image/hubspot.svg'
@@ -19,28 +20,17 @@ function Header() {
                             </div>
                         </div>
                         <div className='mt-5 text-5xl font-bold'>
-                            <h1>Find the most exciting jobs in tech</h1>
+                            <h1>Hireup is a webflow membership template.</h1>
                         </div>
                     </div>
                     <div className='text-gray-700 text-lg font-medium grid content-end lg:justify-items-end mt-5'>
                         <div className='w-5/6'>
-                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mi rhoncus, pharetra leo et. <span className='text-blue-700'><a href=''>Sign in</a></span> or <span className='text-blue-700'><a href=''>sign up</a></span> to get started!</h3>
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris rhoncus pharetra cursus. Suspendisse sodales porta.</h3>
                         </div>
                     </div>
                 </div>
                 <div className='mt-14 h-96 lg:h-144'>
                     <img className='w-full h-full object-cover' src="https://assets.website-files.com/63337525695d8ba70ab44222/6358b2bbb9fdec69f1b1c7a4_adam-rhodes-ep5lX958f7E-unsplash-p-2000.webp" alt="" />
-                </div>
-                <div className='hidden sm:grid justify-items-center'>
-                    <div className='flex relative'>
-                        <div className='span absolute -left-12 z-0'></div>
-                        <div className='bg-gray-100 px-4 py-4 z-10'>
-                            <div className='text-base font-semibold'>
-                                <h4 className='text-gray-500'>Work for <span className='text-gray-800'>industry leading</span> global companies</h4>
-                            </div>
-                        </div>
-                        <div className='span absolute -right-12'></div>
-                    </div>
                 </div>
                 <div className='mt-10 grid grid-cols-3 md:grid-cols-6 gap-8 p-2 [&>div:not(child)]:py-2 [&>div:not(child)]:content-center'>
                     <div>

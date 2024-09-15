@@ -13,8 +13,6 @@ import Header from '../section/home/Header'
 function Home() {
   return (
     <div>
-        <Banner/>
-        <Navigation/>
         <Header/>
         <ExploreLatestJob/>
         <Companies/>
@@ -22,7 +20,6 @@ function Home() {
         <Testimonial/>
         <Blog/>
         <ExploreJob/>
-        <Footer/>
     </div>
   )
 }

@@ -31,7 +31,7 @@ function Feature() {
                         <div>
                             <div className='grid gap-2'>
                                 <div className='p-5 bg-gray-50 flex gap-x-5'>
-                                    <div className='border-2 border-slate-200 inline-block p-4 text-2xl text-blue-700'>
+                                    <div className='border-2 border-slate-200 content-center inline-block p-4 text-2xl text-blue-700'>
                                         <BsFillPersonLinesFill />
                                     </div>
                                     <div>
@@ -40,7 +40,7 @@ function Feature() {
                                     </div>
                                 </div>
                                 <div className='p-5 bg-gray-50 flex gap-x-5'>
-                                    <div className='border-2 border-slate-200 inline-block p-4 text-2xl text-blue-700'>
+                                    <div className='border-2 border-slate-200 content-center inline-block p-4 text-2xl text-blue-700'>
                                         <BsFillPersonLinesFill />
                                     </div>
                                     <div>
@@ -49,7 +49,7 @@ function Feature() {
                                     </div>
                                 </div>
                                 <div className='p-5 bg-gray-50 flex gap-5'>
-                                    <div className='border-2 border-slate-200 inline-block p-4 text-2xl text-blue-700'>
+                                    <div className='border-2 border-slate-200 content-center inline-block p-4 text-2xl text-blue-700'>
                                         <BsFillPersonLinesFill />
                                     </div>
                                     <div>
