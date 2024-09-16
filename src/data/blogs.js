@@ -29,6 +29,12 @@ const blogs = [
         info: 'Why Every Student Should Get a Startup Job',
         date: 'March 24, 2021',
     },
+    {
+        image: 'https://cdn.prod.website-files.com/63337525695d8b8aebb4423f/63337525695d8b15bcb4424e_Blog%20Thumbnail%20(1).jpg',
+        title: 'Education',
+        info: 'The Ultimate Guide to Employee Onboarding',
+        date: 'March 24, 2021',
+    },
 ]
 
 export default blogs

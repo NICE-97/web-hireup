@@ -22,12 +22,14 @@ function SingleBlog({title, image, info, date}) {
           </div>
           <p className="text-2xl font-bold">{info}</p>
           <p className="uppercase text-gray-500 font-medium">{date}</p>
-          <div className="flex gap-4  justify-center py-2 bg-gray-100 font-medium">
-            <button>Read More</button>
-            <div className="content-center">
-              <FaArrowRight />
+          <button className="flex gap-4  justify-center py-2 bg-gray-100 font-medium hover:bg-gray-200 tansition duration-300 ease-in-out">
+            <div className="flex gap-2">
+              <div>Read More</div>
+              <div className="content-center">
+                <FaArrowRight />
+              </div>
             </div>
-          </div>
+          </button>
         </div>
       </div>
     </div>

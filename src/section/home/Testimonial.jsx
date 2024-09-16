@@ -4,6 +4,10 @@ import { FaArrowLeft } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
 import presons from '../../data/presons';
 
+// Motion Control
+import { motion } from 'framer-motion'
+import { fadeIn } from '../../variants'
+
 function Testimonial() {
   const [ presonId, setPresonId ] = useState(0);
   const presonlength = presons.length;
@@ -25,15 +29,21 @@ function Testimonial() {
 
   return (
     <section className='container max-w-full bg-zinc-100'>
-                <div className='max-w-7xl mx-auto px-10 py-20'>
+                <motion.div
+                variants={fadeIn('up', 0.2)}
+                initial='hidden'
+                whileInView={'show'}
+                viewport={{once: false, amount: 0}}
+                
+                className='max-w-7xl mx-auto px-10 py-20'>
                     <div className='grid justify-items-center gap-5'>
                         <h3 className='text-2xl font-semibold text-blue-700'>TESTIMONIAL</h3>
                         <h1 className='text-4xl font-bold'>See what users say about our job platform</h1>
                     </div>
-                    <div className='grid gap-5 grid-cols-1 mt-10 '>
+                    <div className='grid gap-5 grid-cols-1 mt-10'>
                         {presons.map((items, index) => {
                             return(
-                                <div key={`${index}-${items.name}`} className={`grid gap-5 grid-cols-1 md:grid-cols-2 ${index === presonId ? '' : 'hidden'}`}>
+                                <div key={`${index}-${items.name}`} className={`grid gap-5 grid-cols-1 md:grid-cols-2 transition duration-300 ${index === presonId ? '' : 'hidden'}`}>
                                     <div className='grid gap-2 content-between'>
                                         <div>
                                             <div className='border-2 inline-block p-5 bg-white'>
@@ -64,7 +74,7 @@ function Testimonial() {
                             )
                         })}
                     </div>
-                </div>
+                </motion.div>
     </section>
   )
 }

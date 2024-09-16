@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaArrowRight } from "react-icons/fa";
 import { IoMdMenu } from "react-icons/io";
-import { Link } from "react-router-dom";
+import LinkComponent from './LinkComponent';
 
 function Navigation() {
   const [ showContent, setShowContent ] = useState(false)
+
   return (
     <nav className='container max-w-full border-solid border-b-2 border-slate-200 sticky bg-white'>
           <div className='max-w-7xl mx-auto py-6 px-10'>
@@ -18,10 +19,11 @@ function Navigation() {
                 </div>
               </div>
               <ul className='lg:flex gap-5 text-xl hidden [&>li:not(child)]:content-center text-gray-700'>
-                <li className='hover:text-blue-700 transition-all'><Link to="/">Home</Link></li>
-                <li className='hover:text-blue-700 transition-all'><Link to="/company">Company</Link></li>
-                <li className='hover:text-blue-700 transition-all'><Link to="/browse">Browse</Link></li>
-                <li className='hover:text-blue-700 transition-all'><Link to="/">Blog</Link></li>
+                <LinkComponent to="/">Home</LinkComponent>
+                <LinkComponent to="/company">Company</LinkComponent>
+                <LinkComponent to="/browse">Browse</LinkComponent>
+                <LinkComponent to="/blog">Blog</LinkComponent>
+                
               </ul>
               <div className='lg:flex gap-2 font-medium hidden'>
                   <button className='px-6 py-4 text-gray-700 hover:text-blue-700 transition duration-300 ease-in-out'>Post a Job</button>
@@ -35,10 +37,10 @@ function Navigation() {
             </div>
             <nav className={`grid overflow-hidden transition-all lg:hidden duration-700 ease-in-out text-lg mt-5 gap-5 text-gray-700 font-semibold ${showContent ? 'grid-rows-[1fr] opacity-100 mt-5' : 'grid-rows-[0fr] opacity-0 mt-0'}`}>
               <ul className='overflow-hidden flex flex-col gap-3'>
-                <li className='hover:text-blue-700 transition-all'><Link to="/">Home</Link></li>
-                <li className='hover:text-blue-700 transition-all'><Link to="/company">Company</Link></li>
-                <li className='hover:text-blue-700 transition-all'><Link to="/browse">Browse</Link></li>
-                <li className='hover:text-blue-700 transition-all'><Link to="/">Blog</Link></li>
+                <LinkComponent to="/">Home</LinkComponent>
+                <LinkComponent to="/company">Company</LinkComponent>
+                <LinkComponent to="/browse">Browse</LinkComponent>
+                <LinkComponent to="/blog">Blog</LinkComponent>
                 <button className='bg-blue-700 hover:bg-blue-800 text-white px-6 py-4 transition duration-300 ease-in-out'>Login</button>
               </ul>
             </nav>

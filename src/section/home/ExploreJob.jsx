@@ -2,10 +2,20 @@ import React from 'react'
 import iconperson from '../../assets/image/iconperson.svg'
 import { IoMdSearch } from "react-icons/io";
 
+// Motion Control
+import { motion } from 'framer-motion'
+import { fadeIn } from '../../variants'
+
 function ExploreJob() {
   return (
     <section className='container max-w-full py-20'>
-            <div className='max-w-7xl mx-auto px-10 py-40 bg-zinc-100 flex justify-center relative'>
+            <motion.div 
+            variants={fadeIn('up', 0.2)}
+            initial='hidden'
+            whileInView={'show'}
+            viewport={{once: false, amount: 0}}
+            
+            className='max-w-7xl mx-auto px-10 py-40 bg-zinc-100 flex justify-center relative'>
                 <div className='border-2 inline-block p-5 bg-white absolute -top-10'>
                     <img src={iconperson} alt="preson" />
                 </div>
@@ -24,7 +34,7 @@ function ExploreJob() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
     </section>
   )
 }

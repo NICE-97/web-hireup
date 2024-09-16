@@ -1,11 +1,21 @@
 import React from 'react'
 import { BsFillPersonLinesFill } from "react-icons/bs";
 
+// Motion Control
+import { motion } from 'framer-motion'
+import { fadeIn } from '../../variants'
+
 function Feature() {
   return (
     <section className='container max-w-full'>
             <div className='max-w-7xl mx-auto px-10 py-20'>
-                <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-10'>
+                <motion.div 
+                variants={fadeIn('up', 0.2)}
+                initial='hidden'
+                whileInView={'show'}
+                viewport={{once: false, amount: 0}}
+                
+                className='grid grid-cols-1 lg:grid-cols-2 gap-x-10'>
                     <div>
                         <div className='w-full'>
                             <img className='w-full' src="https://assets.website-files.com/63337525695d8ba70ab44222/6345158a36516a477226909d_Feature%20Image.webp" alt="" />
@@ -60,7 +70,7 @@ function Feature() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
     </section>
   )

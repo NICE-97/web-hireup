@@ -6,6 +6,7 @@ import './App.css'
 import Home from './page/Home';
 import Company from './page/Company';
 import Browse from './page/Browse';
+import Blog from './page/Blog';
 import Navigation from './component/Navigation';
 import Banner from './component/Banner';
 import Footer from './component/Footer';
@@ -27,6 +28,7 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/company' element={<Company/>}/>
         <Route path='/browse' element={<Browse/>}/>
+        <Route path='/blog' element={<Blog/>}/>
       </Routes>
       <Footer/>
     </div>

@@ -7,11 +7,21 @@ import jobs from '../../data/jobs'
 import { GoTriangleDown } from "react-icons/go";
 import { BsFillInfoCircleFill } from "react-icons/bs";
 
+// Motion Control
+import { motion } from 'framer-motion'
+import { fadeIn } from '../../variants'
+
 function Jobs() {
   const [ showSelect, setShowSelect ] = useState(false)
   return (
     <section className='container max-w-full bg-zinc-100'>
-            <div className='max-w-7xl mx-auto px-10 py-20 grid md:grid-cols-[30%,70%] gap-10'>
+            <motion.div 
+            variants={fadeIn('up', 0.2)}
+            initial='hidden'
+            whileInView={'show'}
+            viewport={{once: false, amount: 0}}
+            
+            className='max-w-7xl mx-auto px-10 py-20 grid md:grid-cols-[30%,70%] gap-10'>
                 <div>
                     <div className='grid gap-5'>
                         <div className='flex gap-3 text-xl'>
@@ -63,7 +73,7 @@ function Jobs() {
                         })}
                     </div>
                 </div>
-            </div>
+            </motion.div>
     </section>
   )
 }

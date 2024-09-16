@@ -6,11 +6,21 @@ import opentable from '../../assets/image/opentable.svg'
 import shopify from '../../assets/image/shopify.svg'
 import slack from '../../assets/image/slack.svg'
 
+// Motion Control
+import { motion } from 'framer-motion'
+import { fadeIn } from '../../variants'
+
 function Header() {
   return (
     <section className='container max-w-full'>
             <header className='max-w-7xl mx-auto px-10 py-20'>
-                <div className='grid lg:grid-cols-2'>
+                <motion.div 
+                variants={fadeIn('up', 0.2)}
+                initial='hidden'
+                whileInView={'show'}
+                viewport={{once: false, amount: 0}}
+
+                className='grid lg:grid-cols-2'>
                     <div>
                         <div className='inline-block bg-gray-100 px-4 py-2 rounded-sm'>
                             <div className='flex gap-2 font-medium'>
@@ -27,22 +37,35 @@ function Header() {
                             <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mi rhoncus, pharetra leo et. <span className='text-blue-700'><a href=''>Sign in</a></span> or <span className='text-blue-700'><a href=''>sign up</a></span> to get started!</h3>
                         </div>
                     </div>
-                </div>
-                <div className='mt-14 h-96 lg:h-144'>
-                    <img className='w-full h-full object-cover' src="https://assets.website-files.com/63337525695d8ba70ab44222/6358b2bbb9fdec69f1b1c7a4_adam-rhodes-ep5lX958f7E-unsplash-p-2000.webp" alt="" />
-                </div>
-                <div className='hidden sm:grid justify-items-center'>
-                    <div className='flex relative'>
-                        <div className='span absolute -left-12 z-0'></div>
-                        <div className='bg-gray-100 px-4 py-4 z-10'>
-                            <div className='text-base font-semibold'>
-                                <h4 className='text-gray-500'>Work for <span className='text-gray-800'>industry leading</span> global companies</h4>
-                            </div>
-                        </div>
-                        <div className='span absolute -right-12'></div>
+                </motion.div>
+                <motion.div
+                variants={fadeIn('up', 0.2)}
+                initial='hidden'
+                whileInView={'show'}
+                viewport={{once: false, amount: 0}}
+                >
+                    <div className='mt-14 h-96 lg:h-144'>
+                        <img className='w-full h-full object-cover' src="https://assets.website-files.com/63337525695d8ba70ab44222/6358b2bbb9fdec69f1b1c7a4_adam-rhodes-ep5lX958f7E-unsplash-p-2000.webp" alt="" />
                     </div>
-                </div>
-                <div className='mt-10 grid grid-cols-3 md:grid-cols-6 gap-8 p-2 [&>div:not(child)]:py-2 [&>div:not(child)]:content-center'>
+                    <div className='hidden sm:grid justify-items-center'>
+                        <div className='flex relative'>
+                            <div className='span absolute -left-12 z-0'></div>
+                            <div className='bg-gray-100 px-4 py-4 z-10'>
+                                <div className='text-base font-semibold'>
+                                    <h4 className='text-gray-500'>Work for <span className='text-gray-800'>industry leading</span> global companies</h4>
+                                </div>
+                            </div>
+                            <div className='span absolute -right-12'></div>
+                        </div>
+                    </div>
+                </motion.div>
+                <motion.div 
+                variants={fadeIn('right', 0.2)}
+                initial='hidden'
+                whileInView={'show'}
+                viewport={{once: false, amount: 0}}
+
+                className='mt-10 grid grid-cols-3  md:grid-cols-6 gap-8 p-2 [&>div:not(child)]:py-2 [&>div:not(child)]:content-center'>
                     <div>
                         <img className='w-full' src={opentable} alt="opentable" />
                     </div>
@@ -61,7 +84,7 @@ function Header() {
                     <div>
                         <img className='w-full' src={dropbox} alt="dropbox" />
                     </div>
-                </div>
+                </motion.div>
             </header>
     </section>
   )
