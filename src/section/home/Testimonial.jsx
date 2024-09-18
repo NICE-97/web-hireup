@@ -43,7 +43,7 @@ function Testimonial() {
                     <div className='grid gap-5 grid-cols-1 mt-10'>
                         {presons.map((items, index) => {
                             return(
-                                <div key={`${index}-${items.name}`} className={`grid gap-5 grid-cols-1 md:grid-cols-2 transition duration-300 ${index === presonId ? '' : 'hidden'}`}>
+                                <div key={`${index}-${items.name}`} className={`grid gap-5 grid-cols-1 md:grid-cols-2 transition duration-1000 ${index === presonId ? '' : 'hidden'}`}>
                                     <div className='grid gap-2 content-between'>
                                         <div>
                                             <div className='border-2 inline-block p-5 bg-white'>
@@ -67,7 +67,7 @@ function Testimonial() {
                                     </div>
                                     <div className='flex justify-center md:justify-end'>
                                         <div className='w-full md:w-5/6'>
-                                            <img className='w-full h-96 sm:h-112 md:h-120 object-cover' src={items.image} alt="presonman" />
+                                            <img className={`w-full h-96 sm:h-112 md:h-120 object-cover`} src={items.image} alt="presonman" />
                                         </div>
                                     </div>
                                 </div>

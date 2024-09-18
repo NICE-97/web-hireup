@@ -32,13 +32,23 @@ function Companies() {
                         <p className='text-gray-500 text-xl mt-5'>Discover more than 1,600 open positions</p>
                     </div>
                     <div className='grid justify-end'>
-                        <div className='grid content-end mt-5 md:mt-0'>
-                            <div className='grid grid-flow-col gap-5 text-xl'>
-                                <div className='border-solid border-2 cursor-pointer transition duration-300 ease-in-out border-slate-200 px-3 py-2 hover:bg-slate-200'>
+                        <div className='grid content-end mt-5 md:mt-0 relative'>
+                            <div className='grid grid-flow-col gap-5 text-xl mb-5'>
+                                {/* <div className='border-solid border-2 cursor-pointer transition duration-300 ease-in-out border-slate-200 px-3 py-2 hover:bg-slate-200'>
                                     <button><FaArrowLeft /></button>
                                 </div>
                                 <div className='border-solid border-2  cursor-pointer transition duration-300 ease-in-out border-slate-200 px-3 py-2 hover:bg-slate-200'>
                                     <button><FaArrowRight /></button>
+                                </div> */}
+                                <div className='swiper-button-next absolute right-12 w-20 h-20 '>
+                                    <div className='content-center text-black border-2 p-2 transition duration-300 ease-in-out border-slate-200 px-3 py-2 hover:bg-slate-200'>
+                                        <FaArrowLeft />
+                                    </div>
+                                </div>
+                                <div className='swiper-button-next absolute -right-4 w-20 h-20 '>
+                                    <div className='content-center text-black border-2 p-2 transition duration-300 ease-in-out border-slate-200 px-3 py-2 hover:bg-slate-200'>
+                                        <FaArrowRight />
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -47,7 +57,7 @@ function Companies() {
                 <motion.div
                 variants={fadeIn('right', 0.2)}
                 initial='hidden'
-                whileInView={'show'}
+                whileInView={'show'} 
                 viewport={{once: false, amount: 0}}
 
                 >

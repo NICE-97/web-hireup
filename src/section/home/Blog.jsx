@@ -33,12 +33,22 @@ function Blog() {
                     </div>
                     <div className='grid justify-end'>
                         <div className='grid content-end mt-5 md:mt-0'>
-                            <div className='grid grid-flow-col gap-5 text-xl'>
-                                <div className='border-solid border-2 cursor-pointer transition duration-300 ease-in-out border-slate-200 px-3 py-2 hover:bg-slate-200'>
+                            <div className='grid grid-flow-col gap-5 text-xl relative mb-5 md:mb-0'>
+                                {/* <div className='border-solid border-2 cursor-pointer transition duration-300 ease-in-out border-slate-200 px-3 py-2 hover:bg-slate-200'>
                                     <button><FaArrowLeft /></button>
                                 </div>
                                 <div className='border-solid border-2 cursor-pointer transition duration-300 ease-in-out border-slate-200 px-3 py-2 hover:bg-slate-200'>
                                     <button><FaArrowRight /></button>
+                                </div> */}
+                                <div className='swiper-button-next absolute md:-top-10 right-12 w-20 h-20 '>
+                                    <div className='content-center text-black border-2 p-2 transition duration-300 ease-in-out border-slate-200 px-3 py-2 hover:bg-slate-200'>
+                                        <FaArrowLeft />
+                                    </div>
+                                </div>
+                                <div className='swiper-button-next absolute md:-top-10 -right-4 w-20 h-20 '>
+                                    <div className='content-center text-black border-2 p-2 transition duration-300 ease-in-out border-slate-200 px-3 py-2 hover:bg-slate-200'>
+                                        <FaArrowRight />
+                                    </div>
                                 </div>
                             </div>
                         </div>
