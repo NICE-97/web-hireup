@@ -3,6 +3,10 @@ import { FaArrowRight } from "react-icons/fa";
 import { FaCopyright } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 
+import { CiTwitter } from "react-icons/ci";
+import { CiInstagram } from "react-icons/ci";
+import { CiFacebook } from "react-icons/ci";
+
 function Footer() {
   return (
     <footer className='container max-w-full'>
@@ -46,7 +50,7 @@ function Footer() {
                             </ul>
                         </div>
                     </div>
-                    <div className='mt-10 lg:pl-10 xl:pl-20 flex flex-col justify-between'>
+                    <div className='mt-10 lg:pl-10 xl:pl-20'>
                         <div>
                             <h1 className='uppercase font-bold text-gray-500'>Sign up to our newsletter</h1>
                             <div className='flex gap-5 mt-5'>
@@ -58,16 +62,24 @@ function Footer() {
                                 </div>
                             </div>
                         </div>
-                        <div className='flex justify-center text-center flex-col mt-10 sm:flex-row lg:justify-end gap-2 text-lg font-semibold'>
-                            <span>Copyright</span>
-                            <div className='flex justify-center sm:grid content-center'>
-                                <FaCopyright />
-                            </div>
-                            <span>2024  By - Patthanawong Sangpan</span>
-                            <div className='flex justify-center sm:grid content-center transition-all hover:scale-125'>
-                                <a href="https://github.com/NICE-97" target='_blank'><FaGithub /></a>
-                            </div>
+                    </div>
+                </div>
+                <hr className='my-10'/>
+                <div className='grid gap-5 md:flex md:justify-between text-xl font-semibold'>
+                    <div className='grid grid-rows-4 justify-items-center md:flex gap-2 md:justify-center'>
+                        <span className='content-center'>Copyright</span>
+                        <div className='grid content-center'>
+                            <FaCopyright />
                         </div>
+                        <span className='content-center'>2024  By - Patthanawong Sangpan</span>
+                        <div className='grid content-center transition-all hover:scale-125'>
+                            <a href="https://github.com/NICE-97" target='_blank'><FaGithub /></a>
+                        </div>
+                    </div>
+                    <div className='flex gap-5 text-4xl justify-center'>
+                        <a className='hover:text-blue-700' href="" target="_blank" rel="noopener noreferrer"><CiTwitter/></a>
+                        <a className='hover:text-blue-700' href="" target="_blank" rel="noopener noreferrer"><CiInstagram/></a>
+                        <a className='hover:text-blue-700' href="" target="_blank" rel="noopener noreferrer"><CiFacebook/></a>
                     </div>
                 </div>
             </div>

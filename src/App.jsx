@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Route, Routes } from "react-router-dom";
 
 import './App.css'
@@ -12,9 +11,11 @@ import Banner from './component/Banner';
 import Footer from './component/Footer';
 import ScrollToTop from './component/ScrollToTop';
 import ScrollToTopBtn from './component/ScrollToTopBtn';
+import Login from './page/Login';
+import Register from './page/Register';
+import Post from './page/Post';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className='relative'>
@@ -29,6 +30,9 @@ function App() {
         <Route path='/company' element={<Company/>}/>
         <Route path='/browse' element={<Browse/>}/>
         <Route path='/blog' element={<Blog/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/register' element={<Register/>}/>
+        <Route path='/blog/post/:id' element={<Post/>}/>
       </Routes>
       <Footer/>
     </div>

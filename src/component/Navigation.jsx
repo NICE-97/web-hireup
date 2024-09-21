@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { FaArrowRight } from "react-icons/fa";
 import { IoMdMenu } from "react-icons/io";
 import LinkComponent from './LinkComponent';
+import { Link } from 'react-router-dom';
 
 function Navigation() {
   const [ showContent, setShowContent ] = useState(false)
@@ -14,9 +15,9 @@ function Navigation() {
                 <div className='content-center text-2xl text-blue-700'>
                   <FaArrowRight />
                 </div>
-                <div className='text-4xl font-medium content-center'>
+                <Link to='/' className='text-4xl font-medium content-center'>
                   HireUp
-                </div>
+                </Link>
               </div>
               <ul className='lg:flex gap-5 text-xl hidden [&>li:not(child)]:content-center text-gray-700'>
                 <LinkComponent to="/">Home</LinkComponent>
@@ -27,7 +28,7 @@ function Navigation() {
               </ul>
               <div className='lg:flex gap-2 font-medium hidden'>
                   <button className='px-6 py-4 text-gray-700 hover:text-blue-700 transition duration-300 ease-in-out'>Post a Job</button>
-                  <button className='bg-blue-700 hover:bg-blue-800 text-white px-6 py-4 transition duration-300 ease-in-out'>Login</button>
+                  <Link className='bg-blue-700 hover:bg-blue-800 text-white px-6 py-4 transition duration-300 ease-in-out' to="/login">Login</Link>
               </div>
               <div className='lg:hidden cursor-pointer'>
                 <button onClick={()=>setShowContent(!showContent)} className={`text-3xl content-center p-2 border-2 border-slate-200 transition duration-300 ease-in-out ${showContent ? 'bg-blue-700 text-white' : 'bg-white text-gray-700'}`}>

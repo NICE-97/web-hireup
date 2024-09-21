@@ -10,6 +10,8 @@ export default {
         '112': '28rem',
         '120': '30rem',
         '144': '36rem',
+        '160': '40rem',
+        'screen90': '90vh',
       },
       width: {
         'customSelect': '12.3rem',
