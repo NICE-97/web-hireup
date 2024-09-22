@@ -9,3 +9,7 @@
   border-right: 50px solid transparent;
   border-left: 50px solid transparent;
 }
+
+input:invalid[focused="true"] ~ .errorMessage{
+  display: block;
+}
