@@ -2,14 +2,15 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import FormInput from '../../component/FormInput'
 import { pattern } from 'framer-motion/client';
+import { useNavigate  } from 'react-router-dom';
 
 function RegisterLeft() {
+  const navigate = useNavigate();
   const [values, setValues] = useState({
     email: '',
     name: '',
     password: '',
     confirmPassword: '',
-    checkbox: '',
   });
 
   const registerInput = [
@@ -52,17 +53,34 @@ function RegisterLeft() {
         pattern: values.password,
         required: true,
     },
+    {
+        id:5,
+        name:'checkbox',
+        type:'checkbox',
+        required: true,
+        description: 'I consent to receive marketing emails.',
+    },
+    {
+        id:6,
+        name:'checkbox1',
+        type:'checkbox',
+        required: true,
+        description: "By creating an account, I agree to this website's",
+        privacy: "privacy policy",
+        terms: "terms of service"
+    },
   ]
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    localStorage.setItem('user', JSON.stringify(values));
+    alert('Account created successfully!!')
+    navigate("/login");
   }
 
   const onChange = (e) => {
     setValues({...values, [e.target.name]: e.target.value})
   }
-
-  console.log(values)
 
   return (
     <div className="px-10 my-10 content-center">
@@ -85,15 +103,7 @@ function RegisterLeft() {
                 />
               )
             })}
-            <div className="grid grid-cols-[5%_95%] gap-3 mt-5">
-              <input className="w-6 h-6" type="checkbox" />
-              <div>I consent to receive marketing emails.</div>
-            </div>
-            <div className="grid grid-cols-[5%_95%] gap-3 ">
-              <input className="w-6 h-6" type="checkbox"/>
-              <div>By creating an account, I agree to this website's <a href='/' className='text-blue-700'>privacy policy</a> and <a href='/' className='text-blue-700'>terms of service</a></div>
-            </div>
-            <button className="flex justify-center bg-blue-700 hover:bg-blue-800 text-white py-3 font-semibold transition duration-300 ease-in-out">
+            <button className={`flex justify-center bg-blue-700 hover:bg-blue-800 text-white py-3 font-semibold transition duration-300 ease-in-out`}>
               Create an account
             </button>
           </form>

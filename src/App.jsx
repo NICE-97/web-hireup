@@ -14,6 +14,7 @@ import ScrollToTopBtn from './component/ScrollToTopBtn';
 import Login from './page/Login';
 import Register from './page/Register';
 import Post from './page/Post';
+import ProtectedRoutes from "./Services/ProtectedRoutes";
 
 function App() {
 
@@ -26,13 +27,15 @@ function App() {
       <ScrollToTop/>
       <ScrollToTopBtn/>
       <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/company' element={<Company/>}/>
-        <Route path='/browse' element={<Browse/>}/>
-        <Route path='/blog' element={<Blog/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
-        <Route path='/blog/post/:id' element={<Post/>}/>
+        <Route path="/" element={<ProtectedRoutes/>}>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/company' element={<Company/>}/>
+          <Route path='/browse' element={<Browse/>}/>
+          <Route path='/blog' element={<Blog/>}/>
+          <Route path='/blog/post/:id' element={<Post/>}/>
+        </Route>
       </Routes>
       <Footer/>
     </div>
